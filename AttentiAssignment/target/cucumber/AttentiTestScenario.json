@@ -1,0 +1,223 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Start Test",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 5897850000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I open browser",
+            "match": {
+              "location": "com.definitions.AttentiDefinitions.i_open_browser()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-07-21T09:22:29.256Z",
+        "before": [
+          {
+            "result": {
+              "duration": 436697000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.definitions.AttentiDefinitions.setup()"
+            }
+          }
+        ],
+        "line": 6,
+        "name": "Attenti Conversion Test Scenario",
+        "description": "",
+        "id": "this-is-a-feature-file;attenti-conversion-test-scenario",
+        "after": [
+          {
+            "result": {
+              "duration": 221816000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.definitions.AttentiDefinitions.afterAll()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2942951000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I convert 30 \"Celsius\" to \"Fahrenheit\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "30",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Celsius\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"Fahrenheit\"",
+                  "offset": 26
+                }
+              ],
+              "location": "com.definitions.AttentiDefinitions.i_convert_to(java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 64648000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I expect result to be \"30°C\u003d 86.00000°F\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"30°C\u003d 86.00000°F\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.definitions.AttentiDefinitions.i_expect_result_to_be(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 361215000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I navigate back",
+            "match": {
+              "location": "com.definitions.AttentiDefinitions.i_navigate_back()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2844494000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I convert 50 \"Meters\" to \"Feet\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "50",
+                  "offset": 10
+                },
+                {
+                  "val": "\"Meters\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"Feet\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.definitions.AttentiDefinitions.i_convert_to(java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 60063000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I expect result to be \"50m\u003d 164ft 0.5039400in\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"50m\u003d 164ft 0.5039400in\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.definitions.AttentiDefinitions.i_expect_result_to_be(java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 362160000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I navigate back",
+            "match": {
+              "location": "com.definitions.AttentiDefinitions.i_navigate_back()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2794542000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I convert 10 \"ounces\" to \"grams\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 10
+                },
+                {
+                  "val": "\"ounces\"",
+                  "offset": 13
+                },
+                {
+                  "val": "\"grams\"",
+                  "offset": 25
+                }
+              ],
+              "location": "com.definitions.AttentiDefinitions.i_convert_to(java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 50550000,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I expect result to be \"10oz\u003d 283.4952g\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"10oz\u003d 283.4952g\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.definitions.AttentiDefinitions.i_expect_result_to_be(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "This is a feature file",
+    "description": "",
+    "id": "this-is-a-feature-file",
+    "keyword": "Feature",
+    "uri": "file:src/test/features/AttentiTestScenario.feature",
+    "tags": []
+  }
+]

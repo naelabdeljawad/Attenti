@@ -1,0 +1,140 @@
+@startuml
+class com.definitions.Hook {
+- void initTests()
+- void closeDriver()
+}
+class com.Log {
+~ {static} Logger logger
++ {static} void debug(Object)
++ {static} void error(Object)
++ {static} void fatal(Object)
++ {static} void info(Object)
++ {static} void trace(Object)
++ {static} void warn(Object)
+}
+class com.definitions.TestBase {
++ WebDriver chromeDriver
+# <<Create>> TestBase()
++ WebDriver createDriver()
++ void closeDriver()
+}
+class com.WebDriverFactory {
+- {static} DesiredCapabilities webCapabilities
+- {static} EventFiringWebDriver listenerDriver
+- {static} WebEventListener eventListener
+- {static} ChromeDriverService service
+- {static} ChromeDriver chromeDriver
+- {static} ChromeOptions getChromeCapabilities()
+- {static} EventFiringWebDriver registerWebDriverToListener(WebDriver)
++ {static} WebDriver createChromeDriver()
++ {static} void closeDriver()
+}
+abstract class pom.AbstractPage {
++ FluentWait<WebDriver> wait
+# WebDriver chromeDriver
+# <<Create>> AbstractPage(WebDriver)
++ WebDriver getWebDriver()
++ {abstract}boolean isPageDisplayed()
+}
+class com.CommonUtils {
++ {static} void navigateBack(WebDriver)
++ {static} void sleep(int)
++ {static} String getCurrentTimeDate()
++ {static} int getRandomNumber(int,int)
++ {static} String getRandomString(int)
+}
+class com.definitions.AttentiDefinitions {
+- MetricConversionsPage metricConversionsPage
+- ResultsPage resultsPage
+- {static} String baseURL
++ {static} void setup()
++ void i_open_browser()
++ void i_convert_to(Integer,String,String)
++ void i_expect_result_to_be(String)
++ void i_navigate_back()
++ void afterAll()
+}
+class pom.ConversionsForm {
+- WebElement container
+- WebElement from
+- WebElement to
++ <<Create>> ConversionsForm(WebDriver)
++ boolean convert(int,String,String)
++ boolean isPageDisplayed()
+}
+class com.launcher.AttentiTestScenarioLauncher {
+}
+class pom.ResultsPage {
+- WebElement container
+- WebElement resultText
++ <<Create>> ResultsPage(WebDriver)
++ String getResult()
++ boolean isPageDisplayed()
+}
+class com.WebEventListener {
++ void beforeAlertAccept(WebDriver)
++ void afterAlertAccept(WebDriver)
++ void afterAlertDismiss(WebDriver)
++ void beforeAlertDismiss(WebDriver)
++ void beforeNavigateTo(String,WebDriver)
++ void afterNavigateTo(String,WebDriver)
++ void beforeNavigateBack(WebDriver)
++ void afterNavigateBack(WebDriver)
++ void beforeNavigateForward(WebDriver)
++ void afterNavigateForward(WebDriver)
++ void beforeNavigateRefresh(WebDriver)
++ void afterNavigateRefresh(WebDriver)
++ void beforeFindBy(By,WebElement,WebDriver)
++ void afterFindBy(By,WebElement,WebDriver)
++ void beforeClickOn(WebElement,WebDriver)
++ void afterClickOn(WebElement,WebDriver)
++ void beforeChangeValueOf(WebElement,WebDriver,CharSequence[])
++ void afterChangeValueOf(WebElement,WebDriver,CharSequence[])
++ void beforeScript(String,WebDriver)
++ void afterScript(String,WebDriver)
++ void beforeSwitchToWindow(String,WebDriver)
++ void afterSwitchToWindow(String,WebDriver)
++ void onException(Throwable,WebDriver)
++ void onTestStart(ITestResult)
++ void onTestSuccess(ITestResult)
++ void onTestFailure(ITestResult)
++ void onTestSkipped(ITestResult)
++ void onTestFailedButWithinSuccessPercentage(ITestResult)
++ void onStart(ITestContext)
++ void onFinish(ITestContext)
++ void afterGetScreenshotAs(OutputType<X>,X)
++ void beforeGetScreenshotAs(OutputType<X>)
++ void afterGetText(WebElement,WebDriver,String)
++ void beforeGetText(WebElement,WebDriver)
+}
+class pom.MetricConversionsPage {
+- WebElement pageContainer
+- ConversionsForm conversionsForm
++ <<Create>> MetricConversionsPage(WebDriver)
++ boolean openPage(String)
++ boolean convert(int,String,String)
++ boolean isPageDisplayed()
+}
+class com.API_Calls {
++ {static} Response extractGETResponse(String)
+}
+class com.PropertiesReader {
+- FileInputStream inputStream
+- {static} PropertiesReader propertiesReader
++ <<Create>> PropertiesReader()
++ {static} PropertiesReader getInstance()
++ String getProperty(String)
++ String getProperty(String,String)
+- String getPropertyValue(String)
+- String getPropertyValue(String,String)
+}
+
+
+com.definitions.TestBase <|-- com.definitions.AttentiDefinitions
+pom.AbstractPage <|-- pom.ConversionsForm
+io.cucumber.testng.AbstractTestNGCucumberTests <|-- com.launcher.AttentiTestScenarioLauncher
+pom.AbstractPage <|-- pom.ResultsPage
+org.openqa.selenium.support.events.WebDriverEventListener <|.. com.WebEventListener
+org.testng.ITestListener <|.. com.WebEventListener
+pom.AbstractPage <|-- pom.MetricConversionsPage
+@enduml
